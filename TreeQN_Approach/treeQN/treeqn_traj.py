@@ -85,32 +85,6 @@ class CNN_Decoder(nn.Module):
         x = self.relu(self.deconv1(x))
         x = self.deconv2(x)
         return x
-#Decoder with linear layers (doesn't make difference)
-# class CNN_Decoder(nn.Module):
-#     def __init__(self, embedding_dim, flat_conv_dim, h2, w2, channel_size):
-#         super(CNN_Decoder, self).__init__()
-#         self.fc1 = nn.Linear(embedding_dim, flat_conv_dim)
-#         self.fc2 = nn.Linear(flat_conv_dim, flat_conv_dim)
-#         self.fc3 = nn.Linear(flat_conv_dim, flat_conv_dim)
-#         self.fc4 = nn.Linear(flat_conv_dim, flat_conv_dim)
-#         self.relu = nn.ReLU(True)
-#         self.deconv1 = nn.ConvTranspose2d(32, 16, kernel_size=4, stride=2)
-#         self.deconv2 = nn.ConvTranspose2d(16, channel_size, kernel_size=8, stride=4)
-#         self.h2 = h2
-#         self.w2 = w2
-    
-#     def forward(self, x):
-#         x = self.relu(self.fc1(x))
-#         x = self.relu(self.fc2(x))
-#         x = self.relu(self.fc3(x))
-#         x = self.relu(self.fc4(x))
-#         x = x.view(x.size(0), 32, self.h2, self.w2)  # Ensure dimensions match the encoder's output
-#         x = self.relu(self.deconv1(x))
-#         x = self.deconv2(x)
-#         return x
-
-
-
 
     
 class MLPRewardFn(nn.Module): #s,a reward function
@@ -119,9 +93,7 @@ class MLPRewardFn(nn.Module): #s,a reward function
         self.embedding_dim = embed_dim
         self.num_actions = num_actions
         self.mlp = nn.Sequential(
-            nn.Linear(embed_dim, 64),
-            nn.ReLU(inplace=True),
-            nn.Linear(64, num_actions)
+            nn.Linear(embed_dim, num_actions) #removed relu
         )
 
     def forward(self, x):
@@ -160,7 +132,7 @@ class TreeQN(nn.Module):
         self.value_fun = nn_init(nn.Linear(embedding_dim, 1),w_scale=0.1) #literally its just this except with the w_scale
 
 
-    def tree_transition(self,tensor):
+    def tree_transition(self,tensor): #trying no tanh
         temp = nn.Tanh()(torch.einsum("ij,jab->iba", tensor, self.transition_fun))
         temp = temp.contiguous() #not sure if this is necessary
         next_state = temp.detach()#!
