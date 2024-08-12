@@ -150,6 +150,7 @@ class TreeQN(nn.Module):
         }
         for i in range(self.tree_depth):
             reward = self.reward_fun(tensor) # -> 4 (s,a) rewards
+            print('reward',reward.shape)
             tree_result['rewards'].append(reward.view(-1,1))
             #print(f'Before transition: {tensor.shape}',i)
             tensor = self.tree_transition(tensor) # -> 4 next states

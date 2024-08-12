@@ -1,0 +1,696 @@
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 1.0
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 1
+Train Loss: 35.16415907541911
+Validation Loss: 23.993741989135742
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 1.0
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.590603335698445
+Validation Loss: 11.608343124389648
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 1.0
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 10.010881376266479
+Validation Loss: 10.156356811523438
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.99
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.586289225684272
+Validation Loss: 11.576306343078613
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.99
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.872326093249852
+Validation Loss: 11.874669075012207
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.668245850669013
+Validation Loss: 11.692317962646484
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.550244172414144
+Validation Loss: 11.540950775146484
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.760162136289809
+Validation Loss: 11.761588096618652
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 1.0
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.63360922071669
+Validation Loss: 11.726739883422852
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 1.0
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 5.569049827588929
+Validation Loss: 5.826374053955078
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 1.0
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.634038103951347
+Validation Loss: 11.625295639038086
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.99
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.602029583189223
+Validation Loss: 11.627180099487305
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.99
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.549466668234931
+Validation Loss: 11.613225936889648
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.54609276983473
+Validation Loss: 11.547614097595215
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.717986891004774
+Validation Loss: 11.718788146972656
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 1.0
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.54944117863973
+Validation Loss: 11.551050186157227
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 1.0
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 10.057036198510064
+Validation Loss: 10.227880477905273
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.99
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.588970820109049
+Validation Loss: 11.605927467346191
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.99
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 9.960925306214227
+Validation Loss: 9.94336986541748
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 7.133833306303455
+Validation Loss: 7.125937461853027
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 9.671045830514696
+Validation Loss: 9.795547485351562
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 1.0
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.00423121717241
+Validation Loss: 10.916230201721191
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.550945303175185
+Validation Loss: 11.536559104919434
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 12.125963581932915
+Validation Loss: 12.13034439086914
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 1.0
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 7.956555329428779
+Validation Loss: 8.219377517700195
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 1.0
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.671605258517795
+Validation Loss: 11.67654800415039
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.99
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.631995407740275
+Validation Loss: 11.649022102355957
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.99
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.55003391371833
+Validation Loss: 11.531908988952637
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.99
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.743544223573473
+Validation Loss: 11.73828125
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 5.097742145839665
+Validation Loss: 5.443885803222656
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.554629977544149
+Validation Loss: 11.542396545410156
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 10.90459943877326
+Validation Loss: 10.937761306762695
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 1.0
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 4.221502608102229
+Validation Loss: 4.766277313232422
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 1.0
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 5.777161698291699
+Validation Loss: 5.7318902015686035
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 0.99
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 4.564710370575388
+Validation Loss: 5.234986782073975
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 0.99
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 5.217210483944251
+Validation Loss: 5.681533336639404
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 0.99
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 11.616608354780409
+Validation Loss: 11.625824928283691
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 3.2495517902697126
+Validation Loss: 3.8931868076324463
+
+
+Number of Actions: 4
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 500
+Train Loss: 9.240615887112087
+Validation Loss: 9.286385536193848
+
+
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+
+Number of Actions: 4
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Could not train model. Nan Values
+
+

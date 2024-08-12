@@ -1,0 +1,410 @@
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 12.097665935092502
+Validation Loss: 12.335636138916016
+
+
+Number of Actions: 1
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.720044321484036
+Validation Loss: 11.971306800842285
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.66231337653266
+Validation Loss: 11.909687042236328
+
+
+Number of Actions: 1
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.644762182235718
+Validation Loss: 11.909540176391602
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.554704078038533
+Validation Loss: 11.706490516662598
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.475915400187175
+Validation Loss: 11.723861694335938
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.633959097332424
+Validation Loss: 11.874049186706543
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 7.7485543658336
+Validation Loss: 8.43138599395752
+
+
+Number of Actions: 1
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.579218679004246
+Validation Loss: 11.832990646362305
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 4.346313876286149
+Validation Loss: 4.187215328216553
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.473213540183174
+Validation Loss: 11.721100807189941
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.613508484098647
+Validation Loss: 11.855249404907227
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 6.954029490384791
+Validation Loss: 7.5034356117248535
+
+
+Number of Actions: 1
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 10.807432937622071
+Validation Loss: 10.968002319335938
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 3.5287730458296007
+Validation Loss: 3.5823822021484375
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 6.486955983191729
+Validation Loss: 6.275599956512451
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 10.268834341896905
+Validation Loss: 10.449690818786621
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 4.246124169892735
+Validation Loss: 4.140076637268066
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 5.995746328764492
+Validation Loss: 5.787878513336182
+
+
+Number of Actions: 1
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.600129736794365
+Validation Loss: 11.877119064331055
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.666908327738444
+Validation Loss: 11.911566734313965
+
+
+Number of Actions: 2
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 12.226564688152736
+Validation Loss: 12.479382514953613
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 12.161321867836847
+Validation Loss: 12.414518356323242
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.48020298745897
+Validation Loss: 11.721858978271484
+
+
+Number of Actions: 2
+Embedding Dimension: 2
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.940351189507378
+Validation Loss: 12.221735000610352
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.577496401468913
+Validation Loss: 11.935270309448242
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 12.134026204215155
+Validation Loss: 12.3948974609375
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.492342721091376
+Validation Loss: 11.744108200073242
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.49183563656277
+Validation Loss: 11.771011352539062
+
+
+Number of Actions: 2
+Embedding Dimension: 3
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.914132208294339
+Validation Loss: 12.1781005859375
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.484465429517957
+Validation Loss: 11.739295959472656
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 10.901964039272732
+Validation Loss: 11.22230339050293
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 11.495624017715453
+Validation Loss: 11.765863418579102
+
+
+Number of Actions: 2
+Embedding Dimension: 4
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 5.989468352662192
+Validation Loss: 6.043604373931885
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 3.326492423998813
+Validation Loss: 3.2011752128601074
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 5.463432805405723
+Validation Loss: 5.48461389541626
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.8
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 10.70852017932468
+Validation Loss: 11.032657623291016
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 0.001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 3.897730889843984
+Validation Loss: 3.8708457946777344
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 0.0001
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 6.05329834231072
+Validation Loss: 5.771542072296143
+
+
+Number of Actions: 2
+Embedding Dimension: 8
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 10.739030986362033
+Validation Loss: 11.049171447753906
+
+
+Number of Actions: 4
+Embedding Dimension: 1
+Discount Factor: 0.9
+Learning Rate: 1e-05
+Gradient Clipping: 1.0
+Epochs: 300
+Train Loss: 12.214782163831924
+Validation Loss: 12.480585098266602
+
+
