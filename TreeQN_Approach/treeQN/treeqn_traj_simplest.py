@@ -158,14 +158,13 @@ class MLPRewardFn(nn.Module): #s,a reward function
 
     
 class TreeQN(nn.Module):
-    def __init__(self, input_shape, embedding_dim, num_actions, tree_depth, td_lambda,gamma,decode_dropout,t1=True):
+    def __init__(self, input_shape, embedding_dim, num_actions, tree_depth, gamma,decode_dropout,t1=True):
         super(TreeQN, self).__init__()
         self.in_channels = input_shape[1]
         self.batch_size = input_shape[0] 
         self.embedding_dim = embedding_dim
         self.num_actions = num_actions
         self.tree_depth = tree_depth
-        self.td_lambda = td_lambda
         self.gamma = gamma
         self.decode_dropout = decode_dropout
         self.t1 = t1
@@ -207,18 +206,25 @@ class TreeQN(nn.Module):
 
     def tree_transition(self,tensor): #take in (X,Y) tensor
         if self.t1:
+            #print('temp 1 shape',tensor.shape)
             temp = (torch.einsum("ij,jab->iba", tensor, self.transition_fun))
+            #print('temp 2 shape',temp.shape)
         #temp = temp.contiguous() #not sure if this is necessary
         else:
+            #print('temp 1 shape',tensor.shape)
             temp = tensor.repeat(self.num_actions,1)
+            #print('temp 2 shape',temp.shape)
             temp = temp.view(self.num_actions,-1,self.embedding_dim) * self.transition_fun
+            #print('temp 3 shape',temp.shape)
         next_state = temp#.detach()#!
         return next_state
         
 
     def transition(self,tensor): #take in (X,Y) tensor
         temp = tensor.repeat(self.num_actions,1)
+        #print('temp 1 shape',temp.shape)
         temp = temp.view(self.num_actions,-1,self.embedding_dim) * self.transition_fun
+        #print('temp 2 shape',temp.shape)
         return temp
 
     def tree_plan(self, tensor):
@@ -232,39 +238,64 @@ class TreeQN(nn.Module):
             #print('pre transition', tensor.shape)
             tensor = self.tree_transition(tensor) # -> 4 next states
             #print('post transition', tensor.shape)
-            reward = self.reward_fun(tensor.view(-1,self.embedding_dim)) # -> 4 (s,a) rewards
-
-            tree_result['rewards'].append(reward.view(-1,1))
+            reward = self.reward_fun(tensor.view(-1,self.embedding_dim)) # Just S reward
+            #print('raw reward shape',reward.shape)
+            tree_result['rewards'].append(reward)
 
             tensor = tensor.view(-1, self.embedding_dim)
             #print('post transition reshape', tensor.shape)
             tree_result['embeddings'].append(tensor)
 
             #tree_result['values'].append(self.value_fun(tensor))
-        
         return tree_result
     
     #gets q scores by weighing the expected value of the next state
-    def tree_backup(self, tree_result):
-        all_backup_values = []
-        backup_values = tree_result["rewards"][-1] #(num_actions*batch_size)^depth 
-        for i in range(1, self.tree_depth + 1):
-            one_step_backup = tree_result['rewards'][-i] + self.gamma*backup_values 
-            if i < self.tree_depth:
-                one_step_backup = one_step_backup.view(self.batch_size, -1, self.num_actions)
+    # def tree_backup(self, tree_result):
+    #     all_backup_values = []
+    #     backup_values = tree_result["rewards"][-1] #(num_actions*batch_size)^depth 
+    #     for i in range(1, self.tree_depth + 1):
+    #         one_step_backup = tree_result['rewards'][-i] + self.gamma*backup_values 
+    #         if i < self.tree_depth:
+    #             one_step_backup = one_step_backup.view(self.batch_size, -1, self.num_actions)
 
-                all_backup_values.insert(0, F.softmax(one_step_backup,dim=2).view(-1,1))
-                max_backup = (one_step_backup * F.softmax(one_step_backup, dim = 2)).sum(dim = 2)
-                #max backup is the expected value of the next state
+    #             all_backup_values.insert(0, F.softmax(one_step_backup,dim=2).view(-1,1))
+    #             max_backup = (one_step_backup * F.softmax(one_step_backup, dim = 2)).sum(dim = 2)
+    #             #max backup is the expected value of the next state
 
 
 
-                backup_values = max_backup.view(-1, 1)
-            else:
-                backup_values = one_step_backup
-        backup_values = backup_values.view(self.batch_size, self.num_actions) #q final
-        all_backup_values.insert(0,F.softmax(backup_values, dim = 1).view(-1,1))
-        return backup_values, all_backup_values
+    #             backup_values = max_backup.view(-1, 1)
+    #         else:
+    #             backup_values = one_step_backup
+    #     #backup_values = backup_values.view(self.batch_size, self.num_actions) #q final
+    #     all_backup_values.insert(0,F.softmax(backup_values, dim = 1).view(-1,1))
+    #     return backup_values, all_backup_values
+
+    def tree_backup(self,tree_result):
+
+        fourth_rewards = tree_result["rewards"][-1] #256 Rewards (softmax things later)
+        fourth_vibes = fourth_rewards.view(-1,4).sum(dim=1) #64 Vibes
+        third_rewards = tree_result["rewards"][-2] + self.gamma*fourth_vibes #64 Rewards
+        third_vibes = third_rewards.view(-1,4).sum(dim=1) #16 Vibes
+        second_rewards = tree_result["rewards"][-3] + self.gamma*third_vibes #16 Rewards
+        second_vibes = second_rewards.view(-1,4).sum(dim=1) #4 Vibes
+        first_rewards = tree_result["rewards"][-4] + self.gamma*second_vibes #4 Rewards
+        
+        transition_1_probs = F.softmax(first_rewards,dim=0).unsqueeze(-1) #4 transition probs (4,1)
+
+        transition_2_probs = F.softmax(second_rewards.view(-1,4),dim=1) #Softmax every group of 4 actions (1,4,4)
+        transition_2_probs = transition_2_probs * transition_1_probs
+        transition_2_probs = transition_2_probs.unsqueeze(-1) #4 transition probs (4,4,1)
+
+        transition_3_probs = F.softmax(third_rewards.view(-1,4,4),dim=2) #Softmax every group of 4 actions (4,4,4)
+        transition_3_probs = transition_3_probs * transition_2_probs
+        transition_3_probs = transition_3_probs.unsqueeze(-1) #4 transition probs (4,4,4,1)
+
+        transition_4_probs = F.softmax(fourth_rewards.view(-1,4,4,4),dim=3) #Softmax every group of 4 actions (4,4,4,4)
+        transition_4_probs = transition_4_probs * transition_3_probs 
+
+        return [transition_1_probs, transition_2_probs, transition_3_probs, transition_4_probs]
+
     
 
     def forward(self, tensor):
@@ -275,10 +306,10 @@ class TreeQN(nn.Module):
         #     tensor = tensor / tensor.pow(2).sum(-1, keepdim=True).sqrt()
 
         tree_result = self.tree_plan(tensor)
-        one_step_policy, all_policies = self.tree_backup(tree_result)
+        transition_probs = self.tree_backup(tree_result)
         #return q values like original paper and now also the decoded next_states from each action
         decoded_values = []
         for embedding in tree_result['embeddings']:
             decoded_values.append(self.decoder(embedding))
-        return decoded_values, all_policies 
+        return decoded_values, transition_probs 
  
