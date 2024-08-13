@@ -222,9 +222,7 @@ class TreeQN(nn.Module):
 
     def transition(self,tensor): #take in (X,Y) tensor
         temp = tensor.repeat(self.num_actions,1)
-        #print('temp 1 shape',temp.shape)
         temp = temp.view(self.num_actions,-1,self.embedding_dim) * self.transition_fun
-        #print('temp 2 shape',temp.shape)
         return temp
 
     def tree_plan(self, tensor):
@@ -235,15 +233,11 @@ class TreeQN(nn.Module):
         }
         for i in range(self.tree_depth):
 
-            #print('pre transition', tensor.shape)
             tensor = self.tree_transition(tensor) # -> 4 next states
-            #print('post transition', tensor.shape)
             reward = self.reward_fun(tensor.view(-1,self.embedding_dim)) # Just S reward
-            #print('raw reward shape',reward.shape)
             tree_result['rewards'].append(reward)
 
             tensor = tensor.view(-1, self.embedding_dim)
-            #print('post transition reshape', tensor.shape)
             tree_result['embeddings'].append(tensor)
 
             #tree_result['values'].append(self.value_fun(tensor))
@@ -274,24 +268,24 @@ class TreeQN(nn.Module):
     def tree_backup(self,tree_result):
 
         fourth_rewards = tree_result["rewards"][-1] #256 Rewards (softmax things later)
-        fourth_vibes = fourth_rewards.view(-1,4).sum(dim=1) #64 Vibes
+        fourth_vibes = fourth_rewards.view(-1,self.num_actions).sum(dim=1) #64 Vibes
         third_rewards = tree_result["rewards"][-2] + self.gamma*fourth_vibes #64 Rewards
-        third_vibes = third_rewards.view(-1,4).sum(dim=1) #16 Vibes
+        third_vibes = third_rewards.view(-1,self.num_actions).sum(dim=1) #16 Vibes
         second_rewards = tree_result["rewards"][-3] + self.gamma*third_vibes #16 Rewards
-        second_vibes = second_rewards.view(-1,4).sum(dim=1) #4 Vibes
+        second_vibes = second_rewards.view(-1,self.num_actions).sum(dim=1) #4 Vibes
         first_rewards = tree_result["rewards"][-4] + self.gamma*second_vibes #4 Rewards
         
         transition_1_probs = F.softmax(first_rewards,dim=0).unsqueeze(-1) #4 transition probs (4,1)
 
-        transition_2_probs = F.softmax(second_rewards.view(-1,4),dim=1) #Softmax every group of 4 actions (1,4,4)
+        transition_2_probs = F.softmax(second_rewards.view(-1,self.num_actions),dim=1) #Softmax every group of 4 actions (1,4,4)
         transition_2_probs = transition_2_probs * transition_1_probs
         transition_2_probs = transition_2_probs.unsqueeze(-1) #4 transition probs (4,4,1)
 
-        transition_3_probs = F.softmax(third_rewards.view(-1,4,4),dim=2) #Softmax every group of 4 actions (4,4,4)
+        transition_3_probs = F.softmax(third_rewards.view(-1,self.num_actions,self.num_actions),dim=2) #Softmax every group of 4 actions (4,4,4)
         transition_3_probs = transition_3_probs * transition_2_probs
         transition_3_probs = transition_3_probs.unsqueeze(-1) #4 transition probs (4,4,4,1)
 
-        transition_4_probs = F.softmax(fourth_rewards.view(-1,4,4,4),dim=3) #Softmax every group of 4 actions (4,4,4,4)
+        transition_4_probs = F.softmax(fourth_rewards.view(-1,self.num_actions,self.num_actions,self.num_actions),dim=3) #Softmax every group of 4 actions (4,4,4,4)
         transition_4_probs = transition_4_probs * transition_3_probs 
 
         return [transition_1_probs, transition_2_probs, transition_3_probs, transition_4_probs]

@@ -191,16 +191,18 @@ def store_gradients(model):
 
 def t_view(tensor,shrink =4):
     return torch.round(tensor[0][0][shrink:-shrink, shrink:-shrink])
-
 def action_viewer(model,start_state,actions,shrink=4):
     with torch.no_grad():
-        decoded_states, transition_probabilities = model(start_state)
-        print('Original:\n', t_view(start_state,shrink))
+        enc_state = model.encoder(start_state)
+        transition = model.tree_transition(enc_state)
+        print('True Original Start State:\n', t_view(start_state,shrink))
+        print("Max True Original Start State:", ((start_state[0][0].argmax()//20).item(), (start_state[0][0].argmax()%20).item()))
+        print("Decoded Next States")
         for action in actions:
             print('Action:', action)
-            print('Next State:\n', t_view(decoded_states[action],shrink))
+            print('Next State:\n', t_view(model.decoder(transition.squeeze(0))[action].unsqueeze(0),shrink))
             #get coordinate of max value
-            print('Max Value Decoded:', ((decoded_states[action][0][0].argmax()//20).item(), (decoded_states[action][0][0].argmax()%20).item()))
+            print('Max Value Decoded:', ((model.decoder(transition.squeeze(0))[action][0].argmax()//20).item(), (model.decoder(transition.squeeze(0))[action][0].argmax()%20).item()))
 
 def get_greedy_path(probs):
     best_first_action = probs[0].argmax().item()
