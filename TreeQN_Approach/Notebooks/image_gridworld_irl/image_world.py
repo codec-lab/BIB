@@ -41,7 +41,7 @@ def point_to_tensor(point,goal,size,noise=0):
 
     tensor[x_goal][y_goal] = -1 * scale
 
-    tensor = tensor + torch.randn(tensor.size()) * noise
+    tensor = tensor + torch.randn(tensor.size()) * noise #0.1 0.01
     
     return tensor
 
