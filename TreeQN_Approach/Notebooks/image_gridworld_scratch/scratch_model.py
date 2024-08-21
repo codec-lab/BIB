@@ -80,7 +80,7 @@ class AutoEncoder(nn.Module):
         self.embedding_dim = embedding_dim
         self.transition_function = Parameter(torch.zeros(4, 1, embedding_dim))
         self.transition_function = nn.init.xavier_normal_(self.transition_function)
-
+        self.transition_dropout = nn.Dropout(0.5)
         self.decoder = CNN_Decoder(embedding_dim, output_size, dec_drop_out)
 
     def transition(self,tensor,action): #take in (X,Y) tensor
@@ -102,3 +102,13 @@ class AutoEncoder(nn.Module):
             transitioned_latent_state = self.transition(input_latent_state,action)
             decoded_next_state = self.decoder(transitioned_latent_state) #option 1 difference
             return decoded_input_state, decoded_next_state
+        if option == 3:
+            input_latent_state = self.encoder(input_state)
+            decoded_input_state = self.decoder(input_latent_state) #ground state 
+            transitioned_latent_state = self.transition(input_latent_state,action)
+            decoded_next_state = self.decoder(transitioned_latent_state) #option 1 difference
+            return decoded_input_state, decoded_next_state, input_latent_state, transitioned_latent_state
+        if option == 4: #Autoencoder option 
+            input_latent_state = self.encoder(input_state)
+            decoded_input_state = self.decoder(input_latent_state)
+            return decoded_input_state

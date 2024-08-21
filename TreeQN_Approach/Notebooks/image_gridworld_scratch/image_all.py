@@ -125,7 +125,7 @@ def train_autoencoder(model, optimizer, all_train, all_test, epochs=120):
         for traj in random.sample(all_train, len(all_train)):
             noisy_traj = traj.clone() + torch.randn_like(traj) * 0.1
             train_count +=1
-            decoded_tensor = model(noisy_traj)#model.decoder(encodeded_tensor)
+            decoded_tensor = model(noisy_traj,None, None,option = 4)#model.decoder(encodeded_tensor)
             loss = F.mse_loss(decoded_tensor, noisy_traj) #Should this be with the true tensor?
             optimizer.zero_grad()
             loss.backward()
@@ -137,7 +137,7 @@ def train_autoencoder(model, optimizer, all_train, all_test, epochs=120):
             with torch.no_grad():
                 for traj in all_test:
                     valid_count +=1
-                    decoded_tensor = model(traj)#model.decoder(encodeded_tensor)
+                    decoded_tensor = model(traj,None,None, option =4)#model.decoder(encodeded_tensor)
                     loss = F.mse_loss(decoded_tensor, traj)
                     valid_loss += loss.item()
             print('VALID LOSS',i,(valid_loss/valid_count)/baseline_loss)
